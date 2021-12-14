@@ -1,10 +1,328 @@
 @import "grid"
 $default-ui-system-fonts: system-ui, -apple-system, 'Segoe UI', 'Roboto', 'Ubuntu', 'Cantarell', 'Noto Sans', sans-serif
 %font-light
-	font-family: Fira Sans, $default-ui-system-fonts
+	font-family: Roboto, $default-ui-system-fonts
 	font-style: normal
-	font-weight: 500
+	font-weight: 300
 %font-regular
-	font-family: Fira Sans, $default-ui-system-fonts
+	font-family: Roboto, $default-ui-system-fonts
 	font-style: normal
 	font-weight: normal
+$color-white: #ffffff
+$color-black: #3d3935
+$color-red: #bc204b
+$color-green: #7ccc6c
+$color-grey: #f4f4f1
+$color-yellow: #f1b828
+body
+	background-color: $color-white
+	@extend %font-light
+	color: $color-black
+	min-height: 100vh
+*, a
+	@extend %font-light
+	color: $color-black
+.btn
+	background-color: $color-red
+	border: none
+	border-radius: 200px
+	padding: 0
+	width: 260px
+	height: 110px
+	display: flex
+	align-items: center
+	justify-content: center
+	font-size: 34px
+	color: $color-white
+.header
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.05)
+	height: 160px
+	display: flex
+	align-items: center
+.header__container
+	display: flex
+	justify-content: space-between
+	align-items: center
+.header__menu
+	display: flex
+	align-items: center
+	li
+		margin-left: 40px
+		a
+			font-size: 32px
+.main__container
+	padding: 0 400px
+	h1
+		font-size: 120px
+		margin-bottom: 65px
+	h2
+		font-size: 70px
+		margin-top: 90px
+		margin-bottom: 50px
+	h3
+		font-size: 90px
+		margin-top: 90px
+		margin-bottom: 50px
+	p
+		font-size: 40px
+		margin-bottom: 15px
+	ul
+		margin-top: 30px
+		margin-bottom: 30px
+		padding-left: 45px
+		li
+			position: relative
+			font-size: 34px
+			margin-bottom: 20px
+			&::before
+				content: ''
+				position: absolute
+				top: 50%
+				transform: translateY(-50%)
+				left: -45px
+				height: 16px
+				width: 16px
+				border: 1px solid #bc204b
+				border-radius: 100%
+.banner
+	margin-bottom: 190px
+	padding: 180px 0 200px
+	background: $color-grey
+	clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%)
+.banner__btn
+	margin-right: 110px
+.banner__description
+	margin-bottom: 50px
+	padding-right: 450px
+.banner__info-wrap
+	display: flex
+	align-items: center
+.banner__location
+	font-size: 36px
+	margin-bottom: 0
+	opacity: 0.7
+.banner__icons
+	margin-left: 110px
+.banner__icon
+	width: 70px
+	height: 70px
+	margin-right: 30px
+.banner__logo
+	margin-left: auto
+.benefits
+	padding: 90px 0 120px
+	margin-top: 208px
+	margin-bottom: 230px
+	position: relative
+	&::after
+		content: ''
+		position: absolute
+		top: 0
+		left: 50%
+		transform: translateX(-50%)
+		width: 100vw
+		height: 100%
+		background: $color-grey
+		z-index: -1
+	p
+		font-size: 34px
+.wp-block-media-text__media
+	max-width: 122px
+	margin-right: 20px
+	img
+		object-fit: contain
+.wp-block-media-text .wp-block-media-text__content
+	padding: 0
+.wp-block-columns
+	margin-bottom: 80px
+.wp-block-column:not(:first-child)
+	margin-left: 0
+	padding-left: 75px
+.contact
+	margin-top: 130px
+	margin-bottom: 230px
+.contact__flex
+	display: flex
+	align-items: center
+.contact__field-wrap
+	position: relative
+	height: 80px
+	width: 100%
+	margin-right: 70px
+	border-bottom: 1px solid rgba(61, 57, 53, 0.2)
+	&:last-child
+		margin-right: 0
+.contact__field-wrap_margin
+	margin: 75px 0
+.contact__label
+	position: absolute
+	font-size: 34px
+	top: 0
+	transition: top .2s linear, font-size .2s linear
+.contact__label_active
+	font-size: 24px
+	top: -20px
+.contact__label_red
+	color: $color-red
+.contact__input, .contact__area
+	height: 100%
+	font-size: 34px
+.contact__area
+	padding-top: 15px
+.contact__output
+	display: flex
+	align-items: center
+	margin-top: 60px
+.wpcf7-spinner
+	margin-left: 50px
+.contact.sent .wpcf7-response-output, .contact.invalid .wpcf7-response-output,  .contact.unaccepted .wpcf7-response-output, .contact.payment-required .wpcf7-response-output
+	@extend %font-regular
+	font-size: 30px
+	border: none
+	padding: 0
+	margin: 0
+.contact.invalid .wpcf7-response-output,  .contact.unaccepted .wpcf7-response-output, .contact.payment-required .wpcf7-response-output
+	color: $color-red
+.contact.sent .wpcf7-response-output
+	color: $color-green
+span.wpcf7-list-item
+	display: inline-block
+	margin: 0
+.wpcf7-not-valid-tip
+	color: $color-red
+	@extend %font-regular
+	font-size: 22px
+	position: absolute
+	bottom: -60px
+	left: 0
+.checkbox-agree
+	margin-bottom: 40px
+	display: block
+	.wpcf7-not-valid-tip
+		bottom: -35px
+.wpcf7 .wpcf7-list-item
+	display: block
+	position: relative
+.wpcf7-checkbox label
+	cursor: pointer
+.wpcf7-checkbox input[type=checkbox]
+	position: absolute
+	visibility: hidden
+	width: 36px
+	height: 36px
+	top: 0
+	left: 0
+.wpcf7-checkbox input[type=checkbox] + span:before
+	display: block
+	position: absolute
+	content: ''
+	border-radius: 12px
+	height: 36px
+	width: 36px
+	top: 50%
+	transform: translateY(-50%)
+	left: 0px
+	border: 1px solid $color-red
+.wpcf7-checkbox input[type=checkbox] + span:after
+	display: block
+	position: absolute
+	content: "\2714"
+	color: $color-white
+	width: 36px
+	top: 50%
+	transform: translateY(-50%)
+	left: 0
+	visibility: hidden
+	font-size: 18px
+	text-align: center
+	line-height: 30px
+.wpcf7-checkbox input[type=checkbox]:checked + span:before
+	background: $color-red
+.wpcf7-checkbox input[type=checkbox]:checked + span:after
+	visibility: visible
+.wpcf7-list-item-label
+	margin-left: 52px
+	font-size: 28px
+	display: inline-block
+.pre-footer
+	background: $color-grey
+	padding: 170px 0
+.pre-footer__wrap
+	display: flex
+	align-items: center
+	justify-content: space-between
+	.pre-footer__title
+		font-size: 56px
+		margin-bottom: 0
+.pre-footer__social-links
+	display: flex
+.pre-footer__social-link
+	margin-left: 15px
+.pre-footer__icon
+	width: 76px
+	height: 76px
+.footer
+	background: $color-grey
+	padding-top: 190px
+	padding-bottom: 120px
+	position: relative
+	*
+		color: $color-white
+	&::after
+		content: ''
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		background: $color-black
+		clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%)
+.footer__container
+	position: relative
+	z-index: 1
+.footer__items
+	display: flex
+.footer__item
+	&:last-child
+		margin-left: auto
+.footer__item_width
+	width: 40.2%
+.footer__menu
+	li
+		margin-bottom: 35px
+		margin-right: 230px
+		a
+			font-size: 32px
+.footer__menu_columns
+	columns: 2
+.footer__title
+	@extend %font-regular
+	font-size: 20px
+	color: rgba(255, 255, 255, 0.2)
+	text-transform: uppercase
+	margin-bottom: 30px
+.footer__title_yellow
+	color: $color-yellow
+.footer__social-links
+	display: flex
+	margin-bottom: 80px
+.footer__social-link
+	margin-right: 15px
+	img
+		width: 91px
+		height: 90px
+		border-radius: 100%
+.footer__form-wrap
+	width: 100%
+	height: 80px
+	display: flex
+	align-items: center
+	border-bottom: 1px solid $color-yellow
+.footer__form-control
+	font-size: 34px
+	color: rgba(255, 255, 255, 0.361)
+	padding-right: 20px!important
+.footer__form-submit
+	font-size: 34px
+	color: $color-yellow
+	padding-right: 4px

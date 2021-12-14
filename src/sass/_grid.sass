@@ -56,7 +56,8 @@ input
  padding: 0 
  text-decoration: none
 img
- width: 100%
+ &.img-full_width 
+  width: 100%
  &.img-cover
   height: 100%
   object-fit: cover
@@ -122,3 +123,12 @@ img
    max-width: 8.333333%*$i
   .offset-xl-#{$i}
    margin-left: 8.333333%*$i
+@media only screen and (min-width: 1900px)
+ .container
+  max-width: 1360px
+@media only screen and (min-width: 2400px)
+ .container
+  max-width: 1880px
+@media only screen and (min-width: 2800px)
+ .container
+  max-width: 2370px
